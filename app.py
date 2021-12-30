@@ -27,7 +27,7 @@ def covid_prognosis():
 		prediction_data = pd.DataFrame({'cough':cough,'fever':fever,'sore_throat':sore_throat,'shortness_in_breath':shortness_in_breath,\
 										'head_ace':head_ace,'age':age,'sex':sex})
 
-		model = joblib.load(r'static\ml_model\finalized_lgb_model_model.sav')
+		model = joblib.load(r'static/ml_model/finalized_lgb_model_model.sav')
 		pred =model.predict(prediction_data)
 
 		if np.round(pred) == 1.0:
