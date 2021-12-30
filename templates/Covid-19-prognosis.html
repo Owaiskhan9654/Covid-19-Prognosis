@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Canary Global : Global MedTech Company</title>
+
+    <script src="{{ url_for('static', filename='js/jquery.min.js')}}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/tether.min.js')}}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/form-validation.js')}}" type="text/javascript"></script>
+   <!-- <script src="{{ url_for('static', filename='js/covid-19-prognosis.js')}}" type="text/javascript"></script>-->
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/circle.css')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="https://images.squarespace-cdn.com/content/v1/6036894478caf77d406425f9/1615300927139-0BJS244BVURC7RUSIOLC/favicon.ico?format=100w"/>
+</head>
+
+<body>
+    {% include "navbar.html" %}
+    {% if show_results==False %}
+<section class="main-item">
+      <div class="main-item__image">
+        <img src={{ url_for('static', filename='assets/covid.jfif')}} alt="" style="padding-top: 100px" />
+      </div>
+      <div class="main-item__descr">
+        <div class="main-item__descr__title-text">
+          <h2>COVID-19 Diagnosis/Prognosis  Based on Symptoms</h2>
+          <p style="font-family: 'Monsterrat-regular','Bitstream Vera Sans Mono',sans-serif">
+            Effective screening enables quick and efficient diagnosis of COVID-19 and can mitigate the burden on healthcare systems.
+            Prediction models that combine several features to estimate the
+            risk of infection have been developed, in the hope of assisting
+            medical staff worldwide in triaging patients, especially in the
+            context of limited healthcare resources.
+          </p>
+            <p style="font-family: 'Monsterrat-regular','Bitstream Vera Sans Mono',sans-serif">Early diagnosis is the single most important factor when determining any disease outcomes. Two thirds of diseases can be cured if diagnosed early.
+                Canary uses proven biomarkers and proprietary Nano Sensors to map and uncover hidden data in your breath, so Covid-19,Cancers and other diseases can be detected early and treated more successfully.</p>
+            <p style="font-family: 'Monsterrat-regular','Bitstream Vera Sans Mono',sans-serif">We manage to build a machine learning model which is able to predict a Positive SARS-CoV-2 infection by asking eight basic question
+            The model deployed here is trained on individuals tested in Israel for SARS-CoV-2 Virus. Our model can be used to test Globally for effective screening and prioritization of testing for virus in general populations. </p>
+
+
+        </div>
+        <ul class="main-item__details">
+          <li><a href="https://www.canarydetect.com/"> Learn More</a></li>
+          <!--<li>Date: <span>19. August 2042</span></li>-->
+        </ul>
+      </div>
+    </section>
+    {% endif %}
+<section class="main-item">
+        <form name="Covid-19-prognosis-form" enctype="multipart/form-data" method="post" action="/prognosis/covid_19"
+            role="form" data-toggle="validator" novalidate="true" class="needs-validation">
+            <div class="row">
+                <div class="form-group form-inline col-12 col-lg-6">
+                    <div class="container">
+                       <div class="row">
+                            <label class="col-12 col-sm-6" for="ta03">Having Cough?</label>
+                                <div class="select" id="coughid">
+                                  <select name="cough", >
+                                    <option value=""></option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                  </select>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group form-inline col-12 col-lg-6">
+                    <div class="container">
+                       <div class="row">
+                            <label class="col-12 col-sm-6" for="ta03">Having Fever?</label>
+                                <div class="select">
+                                  <select name="fever">
+                                    <option value=""></option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                  </select>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group form-inline col-12 col-lg-6">
+                    <div class="container">
+                        <div class="row">
+                            <label class="col-12 col-sm-6" for="ta03">Having Sore Throat?</label>
+                                <div class="select">
+                                  <select name="sore_throat">
+                                    <option value=""></option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                  </select>
+                                </div>
+
+
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group form-inline col-12 col-lg-6">
+                    <div class="container">
+                        <div class="row">
+                            <label class="col-12 col-sm-6" for="ta03">Is there Shortness of breath?</label>
+                                <div class="select">
+                                  <select name="shortness_in_breath">
+                                    <option value=""></option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                  </select>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group form-inline col-12 col-lg-6">
+                    <div class="container">
+                       <div class="row">
+                            <label class="col-12 col-sm-6" for="ta03">Having Head Ache?</label>
+                                <div class="select">
+                                  <select name="head_ache">
+                                    <option value=""></option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                  </select>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group form-inline col-12 col-lg-6">
+                    <div class="container">
+                       <div class="row">
+                            <label class="col-12 col-sm-6" for="ta03">Gender</label>
+                                <div class="select">
+                                  <select  name="sex">
+                                    <option value=""></option>
+                                    <option value="0">Female</option>
+                                    <option value="1">Male</option>
+                                  </select>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group form-inline col-12 col-lg-6">
+                    <div class="container">
+                       <div class="row">
+                            <label class="col-12 col-sm-6" for="ta03">Age Above 60?</label>
+                                <div class="select" >
+                                  <select name="age">
+                                    <option value=""></option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                  </select>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group form-inline col-12 col-lg-6">
+                    <div class="container">
+                       <div class="row">
+                            <label class="col-12 col-sm-6" for="ta03">Vaccinated</label>
+                                <div class="select" >
+                                  <select name="vaccinated">
+                                    <option value=""></option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                  </select>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center" style="padding-left: 170px; padding-top: 20px">
+                    <center>
+                        <button class="btn btn-primary" type="submit">Analyze</button>
+                        {% if show_results %}
+                            <a href="/" style="padding-left: 70px"><button class="btn btn-primary" >Home</button></a>
+                        <a href="https://www.canarydetect.com/" style="padding-left: 70px"><button class="btn btn-primary" >Visit main Website</button></a>
+                        {% endif %}
+                    </center>
+                </div>
+            </div>
+        </form>
+
+{% if show_results %}
+<div class="col-md-4 col-md-offset-4">
+  <p>
+    <b><span class="text-danger"> Results</span> {{pred_text}}</b>
+
+</p>
+  <div style="position:relative;padding-top: 20px">
+    <div class="c100 p{{pred_perc}} big">
+      <span class="font-family-Avenir font-size-super">{{pred_perc}}%</span>
+      <div class="slice">
+        <div class="bar"></div>
+        <div class="fill"></div>
+      </div>
+      <p class="complete-text font-family-primary font-weight-regular"></p>
+    </div>
+  </div>
+  <p style="font-size: 12px;padding-top: 10px">
+      <b><span class="text-danger"> Disclaimer</span> Company Takes no responsibility what are the Above Results Shown. Please visit
+          <a href="https://www.canarydetect.com/technology_ultrarapid" style="color: #d51111;text-decoration: none">main website</a> and have a
+        Test from Pelican Kit. Result shown Negative here are not valid for Physical verifications on Airports and Departments.</b></p>
+    <p  style="font-size: 12px;padding-top: 10px">
+      <b><span class="text-danger"> Data </span>Collection For Building Machine Learning Model Data Has been Taken for Israeli Ministry of
+          Health which they Have released Publicly. Also our Model can be implemented globally for testing for the virus in general population
+          <a href="https://data.gov.il/dataset/covid-19" style="color: #d51111;text-decoration: none">Credit</a> </b>
+</p>
+</div>
+    {% endif %}
+       </section>
+    {% include "footer.html" %}
+</body>
+
+</html>

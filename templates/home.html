@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Canary Global : Global MedTech Company</title>
+
+    <script src="{{ url_for('static', filename='js/jquery.min.js')}}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/tether.min.js')}}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/custom.js')}}" type="text/javascript"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/card_flips.css')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="https://images.squarespace-cdn.com/content/v1/6036894478caf77d406425f9/1615300927139-0BJS244BVURC7RUSIOLC/favicon.ico?format=100w"/>
+</head>
+
+<body>
+
+    {% include "navbar.html" %}
+
+    <div class="container mt-lg-6 mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-4 col-12">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <center>
+                                <div class="card">
+                                    <img class="card-img-top"
+                                        src="{{ url_for('static', filename='assets/prognosis.jpg')}}"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5>Covid-19 Prognosis</h5>
+                                        <p class="card-text">Early Prognosis of Covid-19 using Machine Learning based on Symptoms
+                                        </p>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-header">
+                                    Prognosis
+                                </div>
+                                <div class="card-body">
+
+                                    <p class="card-text">Prognosis involves early detection/risk assessment through
+                                        lifestyle habits and
+                                        simpler, non-invasive tests. </p>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <a href="/prognosis/covid_19" class="btn btn-primary btn-md"> Test For Covid-19 by entering Symptoms</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="card-footer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12 mt-lg-0 mt-2">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <center>
+                                <div class="card">
+                                    <img class="card-img-top"
+                                        src="{{ url_for('static', filename='assets/diagnosis.jpg')}}"
+                                        alt="Card image cap">
+
+                                    <div class="card-body">
+                                        <h5>Diagnosis</h5>
+                                        <p class="card-text">Predictions For Surgeries Requirements in Lung Cancer and Serious Covid Patients </p>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-header">
+                                    Lungs Diagnosis
+                                </div>
+
+                                <div class="card-body">
+                                    <p> Canary Global Inc. Data Science Team aimed to establish models based on
+                                        artificial intelligence for predicting the Surgeries Requirement in NSCLC Patient. </p>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <a href="https://non-small-lung-cancer.herokuapp.com/" class="btn btn-primary btn-md">Visit and Learn More</a>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="card-footer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-12 mt-lg-0 mt-2" >
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');" >
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <center>
+                                <div class="card">
+                                    <img class="card-img-top"
+                                        src="{{ url_for('static', filename='assets/Dashboard.png')}}"
+                                        alt="Card image cap" style="height: 230px">
+                                    <div class="card-body" >
+                                        <h5>Covid-19 Dashboard</h5>
+                                        <p class="card-text">Canary Global Covid-19 Dashboard for Deep Analysis For Live Data visualizations</p>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-header">
+                                    Canary Global Covid-19 Dashboard
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">Canary Global Covid-19 Dashboard for Deep Analysis</h4>
+                                    <p class="card-text">The purpose of this dashboard is to spread awareness and provide
+                                        some useful insights on COVID-19 by the means of data and Visual Charts.</p>
+                                    <a href="https://canary-covid-dash.herokuapp.com" class="btn btn-primary btn-md">Visit and Learn More</a>
+                                </div>
+                                <div class="card-footer"></div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<section class="main-item">
+      <div class="main-item__image">
+        <img src={{ url_for('static', filename='assets/covid2.jpeg')}} alt="" />
+      </div>
+      <div class="main-item__descr">
+        <div class="main-item__descr__title-text">
+          <h2>Saving Lives Through Early Disease Detection</h2>
+          <p style="font-family: 'Monsterrat-regular','Bitstream Vera Sans Mono',sans-serif;font-size: 20px">
+            Canary Global Inc. (Canary) is a medical technology company that builds revolutionary diagnostic platforms and services.
+              Combined with AI-powered intelligence, Canary’s nano-sensor technology can detect diseases, characterize the nature and
+              location of cancers, and predict and monitor responses to therapy.
+          </p>
+            <p style="font-family: 'Monsterrat-regular','Bitstream Vera Sans Mono',sans-serif ; font-size: 20px"><strong>Early diagnosis</strong> is the single most important factor when determining any disease outcomes. Two thirds of diseases can be cured if diagnosed early.
+                Canary uses proven biomarkers and proprietary Nano Sensors to map and uncover hidden data in your breath, so Covid-19,Cancers and other diseases can be detected early and treated more successfully.</p>
+        </div>
+        <ul class="main-item__details">
+          <li><a href="https://www.canarydetect.com/"> Learn More</a></li>
+          <li><a href="/prognosis/covid_19"> Diagnosis</a></li>
+        </ul>
+      </div>
+    </section>
+    {% include "footer.html" %}
+</body>
+
+</html>

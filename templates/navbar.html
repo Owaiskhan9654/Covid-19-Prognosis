@@ -1,0 +1,43 @@
+<nav class="navbar navbar-custom navbar-dark navbar-expand-md">
+    <div class="container">
+        <a class="navbar-brand" href="https://www.canarydetect.com/">
+        <img class="card-img-top"
+             src="{{ url_for('static', filename='assets/faster_Canary_logo_White-animation.gif')}}" alt="Card image cap" style="height: 70px; width: 250px"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-target="dropdown">
+                        Covid-19 Prognosis
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/prognosis/covid_19">Test For Covid-19 by entering Symptoms</a>
+                        <a class="dropdown-item" href="http://canarycovidvariant.pythonanywhere.com/"> Raw Data for SARS-CoV-2 Virus Variants (Past 10 Days)</a>
+                    </div>
+                </li>
+            
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                        Lungs Diagnosis
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="https://non-small-lung-cancer.herokuapp.com/">Visit and Learn More</a>
+
+                    </div>
+                </li>
+            
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                        Covid-19 Dashboard
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="https://canary-covid-dash.herokuapp.com/dashboard/">Visit and Learn More</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
